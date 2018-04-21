@@ -1,0 +1,20 @@
+apiVersion: apiextensions.k8s.io/v1beta1
+kind: CustomResourceDefinition
+metadata:
+  name: redises.rediscontroller.k8s.io
+spec:
+  group: rediscontroller.k8s.io
+  version: v1alpha1
+  names:
+    kind: Redis
+    plural: redises
+  scope: Namespaced
+  validation:
+    openAPIV3Schema:
+      properties:
+        spec:
+          properties:
+            replicas:
+              type: integer
+              minimum: 1
+              maximum: 10

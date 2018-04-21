@@ -1,0 +1,11 @@
+apiVersion: rediscontroller.k8s.io/v1alpha1
+kind: Redis
+metadata:
+  name: example-redis-7
+spec:
+  deploymentName: example-redis-deploy
+  replicas: 1
+  skuName: Basic
+  skuFamily: C
+  skuCapacity: 1
+
